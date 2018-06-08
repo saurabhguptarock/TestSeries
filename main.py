@@ -19,6 +19,11 @@ lblinfo = Label(top, font=('arial', 15, 'bold'),
 lblinfo.grid(row=0, column=0)
 
 
+def ask_question(answer):
+    webbrowser.open(answer.get())
+    print(answer.get())
+
+
 def message():
     global root1
     root1 = Tk()
@@ -37,6 +42,7 @@ def message():
 
 
 def question():
+
     root2 = Tk()
     root2.geometry('1920x1080')
     root2.title('Question')
@@ -54,7 +60,9 @@ def question():
     login = Entry(top, font=('arial', 50, 'bold'), textvariable=answer,
                   bd=10, insertwidth=4, bg='powder blue', justify='left')
     login.grid(row=1, column=0)
-    webbrowser.open(answer)
+    ask = Button(top, padx=30, pady=8, bd=2, fg='black', font=('arial', 20, 'bold'),
+                 text='Ask Question', bg='powder blue', command=lambda: ask_question(answer))
+    ask.grid(row=1, column=1)
 
 
 def exit():
