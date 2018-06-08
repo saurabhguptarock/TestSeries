@@ -1,6 +1,5 @@
 from tkinter import *
 from nltk.tokenize import word_tokenize
-from question import question_asked
 
 root = Tk()
 root.geometry('400x200')
