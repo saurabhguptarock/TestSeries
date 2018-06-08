@@ -1,5 +1,6 @@
 from tkinter import *
 from nltk.tokenize import word_tokenize
+import webbrowser
 
 root = Tk()
 root.geometry('400x200')
@@ -44,7 +45,7 @@ def question():
     top.pack(side=TOP)
 
     lblinfo = Label(top, font=('arial', 15, 'bold'),
-                    text="QUESTIONS ARE BELOW", fg='Steel Blue', bd=10, anchor='w')
+                    text="ASK ANY QUESTION", fg='Steel Blue', bd=10, anchor='w')
     lblinfo.grid(row=0, column=0)
 
     # for question in question_asked():
@@ -53,6 +54,7 @@ def question():
     login = Entry(top, font=('arial', 50, 'bold'), textvariable=answer,
                   bd=10, insertwidth=4, bg='powder blue', justify='left')
     login.grid(row=1, column=0)
+    webbrowser.open(answer)
 
 
 def exit():
